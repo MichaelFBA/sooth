@@ -1,5 +1,6 @@
-# fresh project
-
+# Sooth
+FOSS (self hosted media server) written in Fresh / Deno
+ 
 ### Usage
 
 Start the project:
