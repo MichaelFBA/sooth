@@ -3,11 +3,9 @@ import {
     NessieConfig,
 } from "https://deno.land/x/nessie@2.0.10/mod.ts";
 
-const client = new ClientSQLite("./sooth.db");
-
 /** This is the final config object */
 const config: NessieConfig = {
-    client,
+    client: new ClientSQLite("./db/sooth.sqlite"),
     migrationFolders: ["./db/migrations"],
     seedFolders: ["./db/seeds"],
     

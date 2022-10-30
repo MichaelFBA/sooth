@@ -7,13 +7,21 @@ import {
 export default class extends AbstractMigration<ClientSQLite> {
   /** Runs on migrate */
   async up(info: Info): Promise<void> {
-    this.client.execute(`
+    await this.client.execute(`
         CREATE TABLE audio (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
-          file_name TEXT,
-          file_path TEXT
+          file_name TEXT NOT NULL UNIQUE,
+          file_path TEXT NOT NULL,
+          title TEXT,
+          artist TEXT,
+          album TEXT,
+          year INTEGER,
+          genre TEXT,
+          track_number INTEGER,
+          disk_number INTEGER
         )
       `);
+    
   }
 
   /** Runs on rollback */
