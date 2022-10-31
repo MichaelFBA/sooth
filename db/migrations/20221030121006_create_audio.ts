@@ -18,7 +18,8 @@ export default class extends AbstractMigration<ClientSQLite> {
           year INTEGER,
           genre TEXT,
           track_number INTEGER,
-          disk_number INTEGER
+          disk_number INTEGER,
+          image_url TEXT
         )
       `);
     

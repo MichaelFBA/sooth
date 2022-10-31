@@ -8,7 +8,6 @@ export const handler = async (
   const body = await db.queryEntries(`
     SELECT * FROM audio
   `)
-  console.log(body)
   return new Response(JSON.stringify(body), {
     status: 200,
     headers: {
